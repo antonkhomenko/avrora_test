@@ -1,0 +1,145 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(274px, 1fr));
+    gap: 10px;
+    margin: 0 auto;
+    color: var(--main-purple);
+    max-width: 1694px;
+    width: calc(100% - 20px);
+    font-size: 16px;
+    padding-top: 6.5em;
+    padding-bottom: 6.5em;
+}
+
+
+.card {
+    background-color: rgba(71, 76, 99, 81%);
+    border-radius: 19px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0 ;
+    height: auto;
+    min-height: 150px;
+}
+
+.card.weather-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 15px;
+    background: rgba(130, 120, 237, 52%);
+    font-family: "Montserrat", sans-serif;
+    padding: 0 40px;
+}
+
+.weather-card_time {
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 4rem;
+    font-weight: 800;
+}
+
+.weather-card_weather {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.weather-card_list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: "Montserrat", sans-serif;
+    font-size: 2rem;
+    color: white;
+    text-align: center;  
+}
+
+
+.weather-card_list > li:nth-of-type(1) {
+    font-weight: bold;
+}
+
+.weather-card_day {
+    color: var(--main-orange);
+    font-weight: 800;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.card-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 4rem;
+    font-weight: bolder;
+    width: 90%;
+    text-align: center;
+}
+
+.card-text {
+    font-family: "Montserrat", sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    max-width: 90%;
+    text-align: center;
+}
+
+.card.weather-card {
+    grid-column: span 3;
+}
+
+.card.show-all {
+    grid-column: span 2;
+}
+
+@media only screen and (max-width: 1694px) {
+    html {
+        font-size: 12px;
+    }
+
+    body {
+        padding: 0 2em;
+    }
+
+    .container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+        padding-top: 5.5em;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    .container {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+
+    body {
+        padding: 0;
+    }
+    
+    html {
+        font-size: 10px;
+    }
+
+    .card.weather-card {
+      grid-column: span 2; 
+    }
+
+    .card.show-all {
+      grid-column: span 2; 
+    }
+
+    .card {
+        min-width: 160px;
+    }
+}
+
+@media only screen and (max-width: 648px) {
+    .card.weather-card {
+        flex-direction: column;
+        padding: 40px 0;
+    }
+}
+
